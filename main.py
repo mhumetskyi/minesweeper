@@ -1,9 +1,9 @@
-from tkinter import*
+from tkinter import *
 
-root = Tk ()
+root = Tk()
 
-root.title('Minesweeper')
+root.title("Minesweeper")
 
-root.geometry('700x600')
+root.geometry("700x600")
 
 root.mainloop()
