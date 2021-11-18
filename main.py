@@ -1,9 +1,13 @@
 from tkinter import *
 
-root = Tk()
 
-root.title("Minesweeper")
+class Window:
 
-root.geometry("700x600")
+    root = Tk()
+    root.title("Minesweeper")
+    root.geometry("700x600")
 
-root.mainloop()
+    def __init__(self):
+        pass
+
+    root.mainloop()
