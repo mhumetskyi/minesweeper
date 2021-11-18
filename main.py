@@ -10,4 +10,10 @@ class Window:
     def __init__(self):
         pass
 
-    root.mainloop()
+    def start(self):
+
+        Window.root.mainloop()
+
+game = Window()
+game.start()
+
