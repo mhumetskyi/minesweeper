@@ -14,6 +14,6 @@ class Window:
 
         Window.root.mainloop()
 
+
 game = Window()
 game.start()
-
