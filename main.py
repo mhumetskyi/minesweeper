@@ -1,19 +1,13 @@
-from tkinter import *
+import tkinter as tk
 
 
-class Window:
-
-    root = Tk()
-    root.title("Minesweeper")
-    root.geometry("700x600")
-
+class App(tk.Tk):
     def __init__(self):
-        pass
-
-    def start(self):
-
-        Window.root.mainloop()
+        super().__init__()
+        self.geometry('700x600')
+        self.title("Minesweeper")
 
 
-game = Window()
-game.start()
+if __name__ == "__main__":
+    app = App()
+    app.mainloop()
