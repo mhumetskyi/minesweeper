@@ -4,7 +4,7 @@ import tkinter as tk
 class App(tk.Tk):
     def __init__(self):
         super().__init__()
-        self.geometry('700x600')
+        self.geometry("700x600")
         self.title("Minesweeper")
 
 
