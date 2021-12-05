@@ -1,7 +1,6 @@
 import tkinter as tk
 
 from play_button import PlayButton
-
 from menu import MainMenu
 
 

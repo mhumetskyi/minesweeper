@@ -1,6 +1,6 @@
 import tkinter as tk
 
-gt
+
 class MainMenu(tk.Menu):
     def __init__(self):
         super().__init__()
