@@ -2,6 +2,8 @@ import tkinter as tk
 
 from play_button import PlayButton
 
+from menu import MainMenu
+
 
 class App(tk.Tk):
     def __init__(self):
@@ -10,6 +12,9 @@ class App(tk.Tk):
         self.title("Minesweeper")
         play_button = PlayButton()
         play_button.pack()
+
+        menu = MainMenu()
+        self.config(menu=menu)
 
 
 if __name__ == "__main__":
