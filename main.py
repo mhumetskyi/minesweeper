@@ -1,5 +1,6 @@
 import tkinter as tk
 
+from menu import MainMenu
 from play_button import PlayButton
 from play_field import PlayField
 
@@ -15,6 +16,9 @@ class App(tk.Tk):
 
         play_button = PlayButton()
         play_button.pack()
+
+        menu = MainMenu()
+        self.config(menu=menu)
 
         play_field = PlayField(self.ROWS, self.COLUMNS)
         play_field.pack(pady=10)
