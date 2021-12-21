@@ -7,7 +7,7 @@ from stopwatch import Stopwatch
 
 
 class App(tk.Tk):
-    ROWS = 10
+    ROWS = 20
     COLUMNS = 10
 
     def __init__(self):
@@ -19,11 +19,12 @@ class App(tk.Tk):
         play_button.pack()
         play_button.configure(command=self.on_play_button_click)
 
-        menu = MainMenu()
-        self.config(menu=menu)
-
-        play_field = PlayField(self.ROWS, self.COLUMNS)
+        play_field = PlayField()
         play_field.pack(pady=10)
+        play_field.generate_field(self.ROWS, self.COLUMNS)
+
+        menu = MainMenu(play_field)
+        self.config(menu=menu)
 
         self.stopwatch = Stopwatch()
         self.stopwatch.pack()
