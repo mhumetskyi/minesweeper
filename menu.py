@@ -13,6 +13,9 @@ class MainMenu(tk.Menu):
         game_menu = tk.Menu(self, tearoff=0)
         game_menu.add_command(label="Початок гри")
         game_menu.add_cascade(label="Складність", menu=levels_menu)
-        game_menu.add_command(label="Вихід")
+        game_menu.add_command(label="Вихід", command=quit)
 
         self.add_cascade(label="Гра", menu=game_menu)
+
+    def quit(self):
+        self.destroy()
