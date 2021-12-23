@@ -23,10 +23,10 @@ class MainMenu(tk.Menu):
         self.destroy()
 
     def easy_click(self):
+        self.play_field.destroy_buttons()
         self.play_field.generate_field(rows=5, columns=5)
 
     def normal_click(self):
         self.play_field.generate_field(rows=10, columns=10)
-        self.play_field.destroy_buttons()
     def hard_click(self):
         self.play_field.generate_field(rows=15, columns=15)

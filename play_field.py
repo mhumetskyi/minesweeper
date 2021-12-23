@@ -4,15 +4,23 @@ import tkinter as tk
 class PlayField(tk.Frame):
     def __init__(self):
         super().__init__()
-        self.list = []
+        self.buttons = []
+
 
     def generate_field(self, rows, columns):
         for row in range(rows):
+            temp = []
             for column in range(columns):
                 button = tk.Button(self)
                 button.grid(row=row, column=column)
-                self.my_button = [button]
+                temp.append(button)
+            self.buttons.append(temp)
+            self.buttons.destroy()
 
-    def destroy_buttons(self):
-        self.destroy(self.my_button)
+
+
+
+
+
+
 
