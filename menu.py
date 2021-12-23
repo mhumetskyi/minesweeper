@@ -6,11 +6,10 @@ class MainMenu(tk.Menu):
         super().__init__()
         self.play_field = play_field
 
-
         levels_menu = tk.Menu(self, tearoff=0)
         levels_menu.add_command(label="Легко", command=self.easy_click)
-        levels_menu.add_command(label="Нормально",command=self.normal_click)
-        levels_menu.add_command(label="Складно",command=self.hard_click)
+        levels_menu.add_command(label="Нормально", command=self.normal_click)
+        levels_menu.add_command(label="Складно", command=self.hard_click)
 
         game_menu = tk.Menu(self, tearoff=0)
         game_menu.add_command(label="Початок гри")
@@ -27,6 +26,9 @@ class MainMenu(tk.Menu):
         self.play_field.generate_field(rows=5, columns=5)
 
     def normal_click(self):
+        self.play_field.destroy_buttons()
         self.play_field.generate_field(rows=10, columns=10)
+
     def hard_click(self):
+        self.play_field.destroy_buttons()
         self.play_field.generate_field(rows=15, columns=15)

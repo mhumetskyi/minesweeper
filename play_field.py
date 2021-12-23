@@ -6,7 +6,6 @@ class PlayField(tk.Frame):
         super().__init__()
         self.buttons = []
 
-
     def generate_field(self, rows, columns):
         for row in range(rows):
             temp = []
@@ -15,12 +14,7 @@ class PlayField(tk.Frame):
                 button.grid(row=row, column=column)
                 temp.append(button)
             self.buttons.append(temp)
-            self.buttons.destroy()
 
-
-
-
-
-
-
-
+    def destroy_buttons(self):
+        for button in self.winfo_children():
+            button.destroy()
