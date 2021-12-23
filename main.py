@@ -7,7 +7,7 @@ from stopwatch import Stopwatch
 
 
 class App(tk.Tk):
-    ROWS = 20
+    ROWS = 10
     COLUMNS = 10
 
     def __init__(self):
