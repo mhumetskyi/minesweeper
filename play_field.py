@@ -19,7 +19,6 @@ class PlayField(tk.Frame):
 
         self.count_mines_in_buttons()
 
-        # self.open_all_buttons()
         self.count_mines_in_buttons()
         self.print_button()
 
@@ -50,6 +49,11 @@ class PlayField(tk.Frame):
                 else:
                     button.config(text=button.count_bomb, background='gray')
 
+                    if button.count_bomb:
+                        button.config(text=button.count_bomb, background='gray')
+                    else:
+                        button.config(text="", background='gray')
+
     def print_button(self):
         for row in range(1, self.rows + 1):
             for column in range(1, self.columns + 1):
@@ -65,6 +69,8 @@ class PlayField(tk.Frame):
         print(clicked_button)
         if clicked_button.mine:
             clicked_button.config(text="*", background='red')
+            self.open_all_buttons()
+
         else:
             if clicked_button.count_bomb:
                 clicked_button.config(text=clicked_button.count_bomb, background='gray')
