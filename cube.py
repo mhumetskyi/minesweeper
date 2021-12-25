@@ -1,6 +1,7 @@
 import tkinter as tk
 
 
+
 class Cube(tk.Button):
     def __init__(self, master, x, y, number=0, *args, **kwargs):
         super(Cube, self).__init__(master, width=6, height=3, *args, **kwargs)

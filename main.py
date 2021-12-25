@@ -16,11 +16,11 @@ class App(tk.Tk):
         play_button.pack()
         play_button.configure(command=self.on_play_button_click)
 
-        menu = MainMenu()
-        self.config(menu=menu)
-
         play_field = PlayField(PlayField.ROWS, PlayField.COLUMNS)
         play_field.pack(pady=10)
+
+        menu = MainMenu(play_field)
+        self.config(menu=menu)
 
         self.stopwatch = Stopwatch()
         self.stopwatch.pack()
@@ -28,8 +28,6 @@ class App(tk.Tk):
 
     def on_play_button_click(self):
         self.stopwatch.reset()
-
-
 
 if __name__ == "__main__":
     app = App()

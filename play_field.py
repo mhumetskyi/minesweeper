@@ -4,9 +4,10 @@ from random import shuffle
 
 
 class PlayField(tk.Frame):
-    ROWS = 10
-    COLUMNS = 10
-    MINES = 20
+
+    ROWS = 8
+    COLUMNS = 8
+    MINES = 15
 
     def __init__(self, rows, columns):
         super().__init__()
@@ -70,7 +71,6 @@ class PlayField(tk.Frame):
         if clicked_button.mine:
             clicked_button.config(text="*", background='red')
             self.open_all_buttons()
-
         else:
             if clicked_button.count_bomb:
                 clicked_button.config(text=clicked_button.count_bomb, background='gray')
@@ -107,3 +107,18 @@ class PlayField(tk.Frame):
         indexes = list(range(1, PlayField.ROWS * PlayField.COLUMNS + 1))
         shuffle(indexes)
         return indexes[:PlayField.MINES]
+
+    def generate_fields(self, rows, columns):
+        for row in range(rows):
+            temp = []
+            for column in range(columns):
+                button = Cube(self, x=row, y=column)
+                button.config(command=lambda btn=button: self.click(btn))
+                button.grid(row=row, column=column)
+                temp.append(button)
+            self.buttons.append(temp)
+
+    def destroy_buttons(self):
+
+        for button in self.winfo_children():
+            button.destroy()
