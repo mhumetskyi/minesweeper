@@ -36,9 +36,6 @@ class MainMenu(tk.Menu):
 
         self.play_field.count_mines_in_buttons()
 
-        self.play_field.count_mines_in_buttons()
-        self.play_field.print_button()
-
     def normal_click(self):
         PlayField.ROWS = 8
         PlayField.COLUMNS = 8
@@ -54,9 +51,6 @@ class MainMenu(tk.Menu):
 
         self.play_field.count_mines_in_buttons()
 
-        self.play_field.count_mines_in_buttons()
-        self.play_field.print_button()
-
     def hard_click(self):
         PlayField.ROWS = 10
         PlayField.COLUMNS = 10
@@ -71,6 +65,3 @@ class MainMenu(tk.Menu):
         self.play_field.insert_mines()
 
         self.play_field.count_mines_in_buttons()
-
-        self.play_field.count_mines_in_buttons()
-        self.play_field.print_button()
