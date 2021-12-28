@@ -4,9 +4,8 @@ from play_button import PlayButton
 from play_field import PlayField
 from stopwatch import Stopwatch
 
+
 class App(tk.Tk):
-
-
     def __init__(self):
         super().__init__()
         self.geometry("700x600")
@@ -28,6 +27,7 @@ class App(tk.Tk):
 
     def on_play_button_click(self):
         self.stopwatch.reset()
+
 
 if __name__ == "__main__":
     app = App()

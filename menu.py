@@ -22,9 +22,9 @@ class MainMenu(tk.Menu):
         self.destroy()
 
     def easy_click(self):
-        PlayField.ROWS = int(6)
-        PlayField.COLUMNS = int(6)
-        PlayField.MINES = int(10)
+        PlayField.ROWS = 6
+        PlayField.COLUMNS = 6
+        PlayField.MINES = 10
 
         self.play_field.destroy_buttons()
         self.play_field.rows = 6
@@ -40,9 +40,9 @@ class MainMenu(tk.Menu):
         self.play_field.print_button()
 
     def normal_click(self):
-        PlayField.ROWS = int(8)
-        PlayField.COLUMNS = int(8)
-        PlayField.MINES = int(15)
+        PlayField.ROWS = 8
+        PlayField.COLUMNS = 8
+        PlayField.MINES = 15
 
         self.play_field.destroy_buttons()
         self.play_field.rows = 8
@@ -58,9 +58,9 @@ class MainMenu(tk.Menu):
         self.play_field.print_button()
 
     def hard_click(self):
-        PlayField.ROWS = int(10)
-        PlayField.COLUMNS = int(10)
-        PlayField.MINES = int(20)
+        PlayField.ROWS = 10
+        PlayField.COLUMNS = 10
+        PlayField.MINES = 20
 
         self.play_field.destroy_buttons()
         self.play_field.rows = 10

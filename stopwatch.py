@@ -1,5 +1,6 @@
 import tkinter as tk
 
+
 class Stopwatch(tk.Label):
     def __init__(self):
         super().__init__(text="0", font=("Helvetica", 20), fg="black")
@@ -12,5 +13,3 @@ class Stopwatch(tk.Label):
 
     def reset(self):
         self.configure(text="0")
-
-
