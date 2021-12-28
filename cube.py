@@ -11,4 +11,4 @@ class Cube(tk.Button):
         self.count_bomb = 0
 
     def __repr__(self):
-        return f'Cube {self.x} {self.y} {self.number}, {self.mine}'
+        return f"Cube {self.x} {self.y} {self.number}, {self.mine}"

@@ -4,9 +4,10 @@ from random import shuffle
 
 
 class PlayField(tk.Frame):
-    ROWS = 10
-    COLUMNS = 10
-    MINES = 20
+
+    ROWS = 8
+    COLUMNS = 8
+    MINES = 15
 
     def __init__(self, rows, columns):
         super().__init__()
@@ -45,37 +46,35 @@ class PlayField(tk.Frame):
             for column in range(self.columns + 2):
                 button = self.buttons[row][column]
                 if button.mine:
-                    button.config(text="*", background='red')
+                    button.config(text="*", background="red")
                 else:
-                    button.config(text=button.count_bomb, background='gray')
+                    button.config(text=button.count_bomb, background="gray")
 
                     if button.count_bomb:
-                        button.config(text=button.count_bomb, background='gray')
+                        button.config(text=button.count_bomb, background="gray")
                     else:
-                        button.config(text="", background='gray')
+                        button.config(text="", background="gray")
 
     def print_button(self):
         for row in range(1, self.rows + 1):
             for column in range(1, self.columns + 1):
                 button = self.buttons[row][column]
                 if button.mine:
-                    print('B', end='')
+                    print("B", end="")
                 else:
-                    print(button.count_bomb, end='')
+                    print(button.count_bomb, end="")
             print()
-
 
     def click(self, clicked_button: Cube):
         print(clicked_button)
         if clicked_button.mine:
-            clicked_button.config(text="*", background='red')
+            clicked_button.config(text="*", background="red")
             self.open_all_buttons()
-
         else:
             if clicked_button.count_bomb:
-                clicked_button.config(text=clicked_button.count_bomb, background='gray')
+                clicked_button.config(text=clicked_button.count_bomb, background="gray")
             else:
-                clicked_button.config(text="", background='gray')
+                clicked_button.config(text="", background="gray")
 
     def insert_mines(self):
         index_mines = self.get_places()
@@ -106,4 +105,19 @@ class PlayField(tk.Frame):
     def get_places():
         indexes = list(range(1, PlayField.ROWS * PlayField.COLUMNS + 1))
         shuffle(indexes)
-        return indexes[:PlayField.MINES]
+        return indexes[: PlayField.MINES]
+
+    def generate_fields(self, rows, columns):
+        for row in range(rows):
+            temp = []
+            for column in range(columns):
+                button = Cube(self, x=row, y=column)
+                button.config(command=lambda btn=button: self.click(btn))
+                button.grid(row=row, column=column)
+                temp.append(button)
+            self.buttons.append(temp)
+
+    def destroy_buttons(self):
+
+        for button in self.winfo_children():
+            button.destroy()
