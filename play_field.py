@@ -9,7 +9,7 @@ class PlayField(tk.Frame):
     COLUMNS = 8
     MINES = 15
 
-    def __init__(self, rows, columns):
+    def __init__(self, rows, columns, stopwatch):
         super().__init__()
         self.rows = rows
         self.columns = columns
@@ -22,6 +22,10 @@ class PlayField(tk.Frame):
 
         self.count_mines_in_buttons()
         self.print_button()
+
+        self.stopwatch = stopwatch
+
+        self.buttons = []
 
     def generate_field(self):
         self.buttons = []
@@ -70,6 +74,7 @@ class PlayField(tk.Frame):
         if clicked_button.mine:
             clicked_button.config(text="*", background="red")
             self.open_all_buttons()
+            self.stopwatch.stop_watch()
         else:
             if clicked_button.count_bomb:
                 clicked_button.config(text=clicked_button.count_bomb, background="gray")
