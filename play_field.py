@@ -25,7 +25,6 @@ class PlayField(tk.Frame):
 
         self.stopwatch = stopwatch
 
-        self.buttons = []
 
     def generate_field(self):
         self.buttons = []
